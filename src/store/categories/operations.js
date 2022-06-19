@@ -5,7 +5,7 @@ export const requestCategoriesList = () => {
     return dispatch => {
         dispatch(_setIsCategoriesLoading(true))
 
-        new CategoriesAPI().getCategoriesList().then(({data}) => {
+        return new CategoriesAPI().getCategoriesList().then(({data}) => {
             dispatch(_setCategoriesList(data.map((category, index) => ({
                 name: category,
                 value: index,

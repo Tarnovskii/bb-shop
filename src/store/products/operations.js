@@ -5,7 +5,7 @@ export const requestProductsListByQuery = (limit, skip, q) => {
     return dispatch => {
         dispatch(_setIsProductsLoading(true))
 
-        new ProductsAPI().getProductsByQuery(q, skip, limit).then(({data: {products, total}}) => {
+        return new ProductsAPI().getProductsByQuery(q, skip, limit).then(({data: {products, total}}) => {
             dispatch(_setProductsList(products))
             dispatch(_setProductsTotalCount(total))
         }).catch(error => console.log(error)).finally(() => dispatch(_setIsProductsLoading(false)))

@@ -7,10 +7,12 @@ import {useEffect, useState} from "react";
 import {Link, useNavigate, useSearchParams} from "react-router-dom";
 import {routerBook} from "../../routes/router-book";
 import {Cart} from "../cart/Cart";
-import {useSelector} from "react-redux";
+import {useDispatch, useSelector} from "react-redux";
 import {cartSelector} from "../../store/cart/selector";
+import {initCartFromCookie} from "../../store/cart/operations";
 
 export const Header = () => {
+    const dispatch = useDispatch()
     const {totalPrice} = useSelector(cartSelector)
     const [_value, _setValue] = useState('')
     const [isCartOpen, setIsCartOpen] = useState(false)
@@ -20,6 +22,10 @@ export const Header = () => {
     useEffect(() => {
         _setValue(query.get('q') ? query.get('q') : '')
     }, [query])
+
+    useEffect(() => {
+        dispatch(initCartFromCookie())
+    }, [])
 
     const searchbarInputHandler = ({value}) => {
         _setValue(value)
