@@ -1,0 +1,61 @@
+.wrapper {
+  position: absolute;
+  right: 10px;
+  top: 110%;
+  box-shadow: 3px 3px 3px rgba(0, 0, 0, .3);
+  display: none;
+  background: white;
+  padding: 10px;
+  width: 700px;
+
+  &__product {
+    margin-bottom: 7px;
+    display: flex;
+    column-gap: 10px;
+
+    &_thumbnail {
+      height: 64px;
+      width: 64px;
+      object-position: center center;
+      object-fit: cover;
+    }
+
+
+    &__details {
+      padding-right: 5px;
+      width: 500px;
+      border-right: 1px solid rgba(#2B2D42, .3);
+
+      small {
+        display: block;
+        margin-top: 7px;
+        color: rgba(#2B2D42, .8);
+      }
+    }
+
+    &__controls {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      column-gap: 7px;
+      flex: 1 1 auto;
+
+      span, p {
+        font-weight: bold;
+      }
+
+      p {
+        font-size: 1.2rem;
+      }
+
+      span {
+        cursor: pointer;
+        font-size: 24px;
+      }
+    }
+  }
+}
+
+.wrapper__open {
+  display: block;
+}

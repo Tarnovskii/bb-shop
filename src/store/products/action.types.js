@@ -1,0 +1,5 @@
+export const productsActionsTypes = {
+    SET_LIST: '[PRODUCTS] SET_LIST',
+    SET_IS_LOADING: '[PRODUCTS] SET_IS_LOADING',
+    SET_TOTAL_COUNT: '[PRODUCTS] SET_TOTAL_COUNT'
+}

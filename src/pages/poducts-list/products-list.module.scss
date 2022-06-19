@@ -1,0 +1,123 @@
+.header {
+  padding: 30px;
+  width: 100%;
+  border-radius: 15px;
+  margin-bottom: 30px;
+  display: flex;
+  justify-content: flex-end;
+  column-gap: 30px;
+
+  &__sort {
+    display: flex;
+    align-items: center;
+    column-gap: 15px;
+
+    &:last-child {
+      margin-left: auto;
+    }
+
+    &__pagination {
+      &__page {
+        background: none;
+        color: #4A4441;
+        padding: 3px;
+      }
+    }
+  }
+}
+
+.content {
+  padding-bottom: 50px;
+  display: flex;
+  flex-wrap: wrap;
+  row-gap: 30px;
+  column-gap: 30px;
+
+  &:after {
+    content: ' ';
+    flex: 1 1 auto;
+  }
+
+  &__product {
+    cursor: pointer;
+    transition: .3s all;
+    flex: 0 0 320px;
+    border: 1px solid rgba(#4A4441, .1);
+    background: white;
+    border-radius: 15px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 3px 3px rgba(0, 0, 0, .3);
+
+    h4 {
+      margin-bottom: 8px;
+    }
+
+    &:hover {
+      box-shadow: 3px 3px 3px rgba(0, 0, 0, .3);
+    }
+
+    &_thumbnail {
+      margin-bottom: 12px;
+      border-bottom-left-radius: 15px;
+      border-bottom-right-radius: 15px;
+      box-shadow: 0 3px 3px rgba(0, 0, 0, .3);
+      height: 240px;
+      width: 100%;
+      object-fit: cover;
+      object-position: center center;
+    }
+
+    &__text {
+      color: #2B2D42;
+      padding: 5px 10px;
+      font-size: 14px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      flex: auto;
+
+      &_description {
+        margin-bottom: 15px;
+        text-overflow: ellipsis;
+        word-wrap: break-word;
+      }
+
+      &__price {
+        display: flex;
+        margin-top: auto;
+        font-size: 1.4em;
+        font-weight: bold;
+        align-items: center;
+        justify-content: space-between;
+
+        p {
+          background: rgba(#2bc530, .2);
+          border-radius: 8px;
+          color: #2bc530;
+          padding: 5px;
+          font-weight: normal;
+          font-size: 0.8em;
+        }
+      }
+
+      &__additional {
+        margin-top: 7px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        small {
+          margin-top: 7px;
+          font-size: 0.9em;
+          color: rgba(#2B2D42, .6);
+        }
+
+        img {
+          height: 20px;
+        }
+      }
+    }
+  }
+}
