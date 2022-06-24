@@ -1,6 +1,6 @@
 import {ProductsList} from "../pages/poducts-list/ProductsList";
+import {Page404} from '../pages/404/Page404'
 import {ContentWrapper} from "../components/content-wrapper/ContentWrapper";
-
 
 /**
  * @param {Object} routerSchema Nested list of all routes
@@ -22,5 +22,8 @@ export const routerSchema = [{
     },{
         index: true,
         element: <ProductsList/>
+    }, {
+        path: '*',
+        element: <Page404/>
     }]
 }]

@@ -1,5 +1,6 @@
 export const routerBook = {
     main: '/',
     category: '/category/:category',
-    product: '/product/:id'
+    product: '/product/:id',
+    page404: '/404'
 }

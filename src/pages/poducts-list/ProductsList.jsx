@@ -7,7 +7,6 @@ import {requestProductsListByCategory, requestProductsListByQuery} from "../../s
 import {paginationSelector} from "../../store/pagination/selectors";
 import {productsSelector} from "../../store/products/selectors";
 import {DropDown} from "../../components/drop-down/DropDown";
-import {requestCategoriesList} from "../../store/categories/operations";
 import shoppingCartIcon from '../../assets/image/shopping-cart.png'
 import {pushProductToCart} from "../../store/cart/operations";
 
@@ -36,10 +35,6 @@ export const ProductsList = () => {
     const dispatch = useDispatch()
     const [query, setQuery] = useSearchParams()
     const {category} = useParams()
-
-    useEffect(() => {
-        dispatch(requestCategoriesList())
-    }, [])
 
     useEffect(() => {
         setCurrentPage(0)
